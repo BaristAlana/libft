@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/13 15:27:54 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/14 17:09:13 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,7 @@ int		ft_isalpha(int c);
 void	ft_bzero(void *s, unsigned int n);
 
 int		ft_atoi(char *str);
+
+void	*ft_memcpy(void *dest, const void *src, unsigned int n);
+
 #endif

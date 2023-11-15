@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:05:41 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/15 14:27:42 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/15 19:53:51 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,20 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*tmp;
+	char		*tmp_dest;
+	const char	*tmp_src;
 
-	tmp = (char *)malloc(sizeof(char) * n);
-	if (tmp == NULL)
-		return (NULL);
-	ft_memcpy(tmp, src, n);
-	ft_memcpy(dest, tmp, n);
-	free(tmp);
+	if (dest < src || dest >= src + n)
+		ft_memcpy(dest, src, n);
+	else
+	{
+		tmp_dest = (char *)dest + n - 1;
+		tmp_src = (const char *)src + n - 1;
+		while (n > 0)
+		{
+			*tmp_dest-- = *tmp_src--;
+			--n;
+		}
+	}
 	return (dest);
 }

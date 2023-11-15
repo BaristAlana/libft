@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:52:29 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/15 11:23:21 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/15 12:21:04 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
 
 /* #include <string.h>
 #include <stdio.h>

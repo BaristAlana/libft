@@ -8,7 +8,8 @@ CFILES = ft_atoi.c \
 	ft_isalpha.c \
 	ft_isdigit.c \
 	ft_memcpy.c  \
-	ft_memset.c
+	ft_memset.c \
+	ft_memmove
 
 OFILES = $(CFILES:.c=.o)
 

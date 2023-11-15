@@ -6,9 +6,11 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:39:10 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/13 13:41:48 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/15 11:26:00 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

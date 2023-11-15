@@ -6,9 +6,11 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:38:50 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/14 12:26:54 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/15 11:25:37 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

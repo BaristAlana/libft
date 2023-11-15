@@ -6,11 +6,13 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:59:41 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/14 15:47:02 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/15 11:23:40 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	char	*p;
 

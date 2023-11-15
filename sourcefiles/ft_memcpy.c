@@ -6,15 +6,17 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:52:29 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/14 17:08:50 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/15 11:23:21 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+#include "libft.h"
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned int	i;
-	char			*source;
-	char			*destination;
+	size_t	i;
+	char	*source;
+	char	*destination;
 
 	i = 0;
 	source = (char *) src;
@@ -27,8 +29,8 @@ void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 	return (dest);
 }
 
-/*
-#include <string.h>
+
+/* #include <string.h>
 #include <stdio.h>
 
 struct my_struct {
@@ -49,4 +51,5 @@ ft_memcpy(&dst, &src, sizeof(struct my_struct));
 // Affiche les données de la structure dst.
 printf("a = %d\n", dst.a);
 printf("b = %c\n", dst.b);
-}*/
+}
+ */

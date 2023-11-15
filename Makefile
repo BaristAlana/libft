@@ -1,6 +1,16 @@
-CFILES = ft_isalpha.c \ ft_isalnum.c \ ft_isascii.c
+CFILES = ft_atoi.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+	ft_isprint.c \
+	ft_memmove.c \
+	ft_strlen.c \
+	ft_bzero.c \
+	ft_isalpha.c \
+	ft_isdigit.c \
+	ft_memcpy.c  \
+	ft_memset.c
 
-OFILES = $(SRCS:.c=.o)
+OFILES = $(CFILES:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -12,7 +22,7 @@ $(NAME): $(OFILES)
 	ar rcs $(NAME) $(OFILES)
 
 %.o: %.c
-	@cc $(FLAG) -c $< -o $@
+	@cc $(CFLAG) -c $< -o $@
 
 clean:
 	rm -f $(OFILES)

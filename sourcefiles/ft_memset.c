@@ -6,11 +6,13 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:49:11 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/14 15:47:17 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/15 11:25:24 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*p;
 

@@ -6,9 +6,11 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:11:57 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/13 15:27:07 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/15 11:25:30 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {

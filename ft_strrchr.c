@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:42:34 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/16 17:32:35 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/16 17:29:24 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t	len;
-	size_t	i;
 
 	len = 0;
 	while (s[len])
 		++len;
-	i = 0;
-	while (i <= len)
+	while (len > 0)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		++i;
+		if (s[len] == c)
+			return ((char *)&s[len]);
+		--len;
 	}
+	if (s[0] == c)
+		return ((char *)&s[0]);
 	return (NULL);
 }

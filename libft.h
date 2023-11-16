@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/16 15:47:24 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/16 16:31:14 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size);
 int		ft_toupper(int c);
 
 int		ft_tolower(int c);
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

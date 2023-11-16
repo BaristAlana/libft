@@ -13,7 +13,8 @@ CFILES = ft_atoi.c \
 	ft_strlcat.c \
 	ft_strlcpy.c \
 	ft_toupper.c \
-	ft_tolower.c
+	ft_tolower.c \
+	ft_strncmp.c
 
 OFILES = $(CFILES:.c=.o)
 

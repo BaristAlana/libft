@@ -6,11 +6,13 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:39:33 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/16 15:44:09 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/16 15:48:11 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	tolower(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
 	if (c <= 'Z' && c >= 'A')
 		return (c + 32);

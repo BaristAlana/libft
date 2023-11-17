@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/17 15:45:37 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/17 18:00:01 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,7 @@ int		ft_atoi(char *str);
 char	*ft_strdup(const char *s);
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

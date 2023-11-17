@@ -55,4 +55,6 @@ void	*ft_memrchr(const void *s, int c, size_t n);
 
 int		ft_atoi(char *str);
 
+char	*ft_strdup(const char *s);
+
 #endif

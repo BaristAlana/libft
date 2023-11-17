@@ -19,7 +19,8 @@ CFILES = ft_atoi.c \
 	ft_strrchr.c \
 	ft_memchr.c \
 	ft_memrchr.c \
-	ft_strdup.c
+	ft_strdup.c \
+	ft_strnstr.c
 
 OFILES = $(CFILES:.c=.o)
 

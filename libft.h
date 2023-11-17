@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/16 18:03:15 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/17 15:45:37 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_isalnum(int c);
 
 int		ft_isalpha(int c);
 
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 
 void	*ft_memset(void *s, int c, size_t n);
 
@@ -56,5 +56,7 @@ void	*ft_memrchr(const void *s, int c, size_t n);
 int		ft_atoi(char *str);
 
 char	*ft_strdup(const char *s);
+
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 #endif

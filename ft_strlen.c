@@ -6,13 +6,13 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:43:00 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/15 11:26:38 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/17 15:45:27 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

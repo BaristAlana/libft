@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 12:59:52 by codespace         #+#    #+#             */
-/*   Updated: 2023/11/17 15:46:28 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/17 15:48:41 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 				++j;
 			}
 		}
-
 	}
 	return (NULL);
 }

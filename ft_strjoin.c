@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:07:04 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/18 18:49:32 by aherbin          ###   ########.fr       */
+/*   Created: 2023/11/18 18:30:47 by aherbin           #+#    #+#             */
+/*   Updated: 2023/11/18 18:51:56 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	i;
-	char			*substr;
+	size_t	i;
+	size_t	j;
+	char	*strjoined;
 
 	i = 0;
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	substr = (char *) malloc(len * sizeof(char));
-	if (!substr)
+	j = 0;
+	strjoined = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1)
+			* sizeof(char));
+	if (!strjoined)
 		return (NULL);
-	while (i < len)
-	{
-		substr[i] = s[start + i];
-		++i;
-	}
-	return (substr);
+	while (s1[i])
+		strjoined[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		strjoined[j++] = s2[i++];
+	strjoined[j] = 0;
+	return (strjoined);
 }
-
-/*
-int main(void)
-{
-	char *str = "test";
-	char *substr = ft_substr(str, 1, 2);
-
-	ft_putendl_fd(substr, 1);
-	free(substr);
-}
-*/

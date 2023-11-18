@@ -22,7 +22,9 @@ CFILES = ft_atoi.c \
 	ft_strdup.c \
 	ft_strnstr.c \
 	ft_memcmp.c \
-	ft_calloc.c
+	ft_calloc.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c
 
 OFILES = $(CFILES:.c=.o)
 

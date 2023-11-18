@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/18 15:29:23 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/18 16:00:56 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_isprint(int c);
 
@@ -62,5 +63,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size);
+
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_putstr_fd(char *str, int fd);
 
 #endif

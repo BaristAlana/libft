@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/18 16:07:13 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/18 18:06:36 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,7 @@ void	ft_putstr_fd(char *str, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putnbr_fd(int n, int fd);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

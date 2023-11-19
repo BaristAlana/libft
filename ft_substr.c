@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:07:04 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/18 18:49:32 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/19 22:31:08 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*substr;
 
 	i = 0;
+	if (!s)
+		return (NULL);
+	if (ft_strlen(s) < start)
+		return (ft_strdup(""));
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
-	substr = (char *) malloc(len * sizeof(char));
+	substr = (char *) malloc(len * sizeof(char) + 1);
 	if (!substr)
 		return (NULL);
 	while (i < len)
@@ -28,6 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		substr[i] = s[start + i];
 		++i;
 	}
+	substr[i] = 0;
 	return (substr);
 }
 

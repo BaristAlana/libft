@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 15:15:17 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/19 17:03:39 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/19 17:07:42 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,17 @@ char	*ft_itoa(int n)
 }
 
 /*#include <stdio.h>
+#include <limits.h>
 
 int main()
 {
 	int n = 256;
-	int n1 = -2147483648;
-	int n2 = 0;
+	int n1 = INT_MIN;
+	int n2 = -0;
+	int n3 = INT_MAX;
+
 	printf("%s\n", ft_itoa(n));
 	printf("%s\n", ft_itoa(n1));
 	printf("%s\n", ft_itoa(n2));
-}
-*/
+	printf("%s\n", ft_itoa(n3));
+}*/

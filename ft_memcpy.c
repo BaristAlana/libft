@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:52:29 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/15 12:21:04 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/19 22:15:43 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*destination;
 
 	i = 0;
+	if (src == dest)
+		return (dest);
 	source = (char *) src;
 	destination = (char *) dest;
 	while (i < n)

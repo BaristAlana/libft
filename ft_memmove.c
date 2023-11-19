@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:05:41 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/15 19:53:51 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/19 22:14:26 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char		*tmp_dest;
 	const char	*tmp_src;
 
+	if (dest == src)
+		return (dest);
 	if (dest < src || dest >= src + n)
 		ft_memcpy(dest, src, n);
 	else

@@ -6,20 +6,11 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 15:15:17 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/19 17:07:42 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/19 21:43:33 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*min_int(void)
-{
-	char	*str;
-
-	str = (char *)malloc(sizeof(char) * 12);
-	str = "-2147483648";
-	return (str);
-}
 
 static int	get_sign(int n)
 {
@@ -28,7 +19,7 @@ static int	get_sign(int n)
 	return (1);
 }
 
-static int	get_len(int n)
+static int	get_len(long n)
 {
 	int	len;
 
@@ -46,11 +37,16 @@ static void	*memalloc(int sign, int len, char *str)
 	if (sign == -1)
 	{
 		str = (char *)malloc(sizeof(char) * len + 2);
+		if (!str)
+			return (NULL);
 		str[0] = '-';
+		str[len + 1] = 0;
 	}
 	else
 		str = (char *)malloc(sizeof(char) * len + 1);
-	str[len + 1] = 0;
+	if (!str)
+		return (NULL);
+	str[len] = 0;
 	return (str);
 }
 
@@ -58,24 +54,25 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	int		sign;
+	long	nbr;
 	char	*str;
 
-	if (n == -2147483648)
-		return (min_int());
-	sign = get_sign(n);
-	if (sign < 0 && n != -2147483648)
-		n *= -1;
-	len = get_len(n);
+	nbr = n;
+	str = NULL;
+	sign = get_sign(nbr);
+	if (sign < 0)
+		nbr *= -1;
+	len = get_len(nbr);
 	str = memalloc(sign, len, str);
 	if (!str)
 		return (NULL);
 	while (len > 0)
 	{
 		if (sign < 0)
-			str[len] = (n % 10) + 48;
+			str[len] = (nbr % 10) + 48;
 		else
-			str[len - 1] = (n % 10) + 48;
-		n /= 10;
+			str[len - 1] = (nbr % 10) + 48;
+		nbr /= 10;
 		--len;
 	}
 	return (str);
@@ -84,15 +81,23 @@ char	*ft_itoa(int n)
 /*#include <stdio.h>
 #include <limits.h>
 
-int main()
+int	main(void)
 {
-	int n = 256;
-	int n1 = INT_MIN;
-	int n2 = -0;
-	int n3 = INT_MAX;
+	char	*str = ft_itoa(1);
+	char	*str1 = ft_itoa(0);
+	char	*str2 = ft_itoa(INT_MAX);
+	char	*str3 = ft_itoa(INT_MIN);
 
-	printf("%s\n", ft_itoa(n));
-	printf("%s\n", ft_itoa(n1));
-	printf("%s\n", ft_itoa(n2));
-	printf("%s\n", ft_itoa(n3));
+	printf("%s\n", str);
+	printf("%s\n", str1);
+	printf("%s\n", str2);
+	printf("%s\n", str3);
+	if (str)
+		free(str);
+	if (str1)
+		free(str1);
+	if (str2)
+		free(str2);
+	if (str3)
+		free(str3);
 }*/

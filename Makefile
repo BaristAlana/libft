@@ -29,7 +29,8 @@ CFILES = ft_atoi.c \
 	ft_putnbr_fd.c \
 	ft_substr.c \
 	ft_strjoin.c \
-	ft_strtrim.c
+	ft_strtrim.c \
+	ft_itoa.c
 
 OFILES = $(CFILES:.c=.o)
 

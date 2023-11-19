@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 15:15:17 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/19 16:41:24 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/19 17:03:39 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	get_sign(int n)
 	return (1);
 }
 
-static int get_len(int n)
+static int	get_len(int n)
 {
 	int	len;
 
@@ -41,11 +41,23 @@ static int get_len(int n)
 	return (len);
 }
 
+static void	*memalloc(int sign, int len, char *str)
+{
+	if (sign == -1)
+	{
+		str = (char *)malloc(sizeof(char) * len + 2);
+		str[0] = '-';
+	}
+	else
+		str = (char *)malloc(sizeof(char) * len + 1);
+	str[len + 1] = 0;
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
 	int		len;
 	int		sign;
-//	long	ncpy;
 	char	*str;
 
 	if (n == -2147483648)
@@ -53,22 +65,10 @@ char	*ft_itoa(int n)
 	sign = get_sign(n);
 	if (sign < 0 && n != -2147483648)
 		n *= -1;
-//	ncpy = n;
 	len = get_len(n);
-/*	while (ncpy >= 10)
-	{
-		++len;
-		ncpy /= 10;
-	}*/
-	if (sign == -1)
-		str = (char *)malloc(sizeof(char) * len + 2);
-	else
-		str = (char *)malloc(sizeof(char) * len + 1);
+	str = memalloc(sign, len, str);
 	if (!str)
 		return (NULL);
-	if (sign == -1)
-		str[0] = '-';
-	str[len + 1] = 0;
 	while (len > 0)
 	{
 		if (sign < 0)
@@ -81,8 +81,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
@@ -93,3 +92,4 @@ int main()
 	printf("%s\n", ft_itoa(n1));
 	printf("%s\n", ft_itoa(n2));
 }
+*/

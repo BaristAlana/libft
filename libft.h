@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/19 15:14:34 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/20 15:46:43 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 
 char	*ft_itoa(int n);
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif

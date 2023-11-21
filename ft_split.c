@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 17:45:13 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/20 19:23:17 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/21 12:47:51 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_wordcount(const char *s, char c)
 	{
 		if (s[i] != c && control == 0)
 		{
-			wc++;
+			++wc;
 			control = 1;
 		}
 		else if (s[i] == c)
@@ -34,21 +34,21 @@ static int	ft_wordcount(const char *s, char c)
 	return (wc);
 }
 
-static void	*freeall(char **str, int nbr_w)
+static void	*freeall(char **str)
 {
 	int	i;
 
 	i = 0;
-	while (i < nbr_w)
+	while (str[i])
 	{
 		free(str[i]);
-		i++;
+		++i;
 	}
 	free(str);
 	return (NULL);
 }
 
-static char	*ft_putword(int start, int end, const char *str)
+static char	*ft_putword(int start, int end, const char *str, char c)
 {
 	char	*word;
 	int		i;
@@ -57,43 +57,50 @@ static char	*ft_putword(int start, int end, const char *str)
 	word = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!word)
 		return (NULL);
-	while (start < end)
+	while (str[start] != c && start <= end)
 	{
 		word[i] = str[start];
-		++i;
 		++start;
+		++i;
 	}
-	word[i] = 0;
+		word[i] = 0;
 	return (word);
+}
+
+static char	**ft_fill_arr(const char *s, char c, char **arr)
+{
+	int	i;
+	int	j;
+	int	start_word;
+
+	i = 0;
+	j = 0;
+	start_word = -1;
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] != c && start_word < 0)
+			start_word = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && start_word >= 0)
+		{
+			arr[j] = ft_putword(start_word, i, s, c);
+			if (!arr[j])
+				return (freeall(arr));
+			++j;
+			start_word = -1;
+		}
+		++i;
+	}
+	return (arr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		start_index;
-	int		i;
-	int		j;
 	char	**arr;
 
-	start_index = -1;
-	i = 0;
-	j = 0;
-	arr = ft_calloc(ft_wordcount(s, c) + 1, (sizeof(char *)));
+	arr = (char **)ft_calloc(ft_wordcount(s, c) + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && start_index < 0)
-			start_index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && start_index >= 0)
-		{
-			arr[j] = ft_putword(start_index, i, s);
-			if (!arr[j])
-				return (freeall(arr, j));
-			++j;
-			start_index = -1;
-		}
-		++i;
-	}
+	arr = ft_fill_arr(s, c, arr);
 	return (arr);
 }
 
@@ -112,8 +119,10 @@ int	main(void)
 {
 	char	**liste;
 
-	liste = ft_split("Salut  les amis :3", ' ');
-	printf("%d\n", ft_wordcount("Salut les  amis :3", ' '));
+	//liste = ft_split("Salut  les amis :3", ' ');
+	liste = ft_split("      split       this for   me  !       ", ' ');
+//	printf("%d\n", ft_wordcount("Salut les  amis :3", ' '));
+	printf("%d\n", ft_wordcount("      split       this for   me  !       ", ' '));
 	affiche_liste(liste);
 	return (0);
 }*/

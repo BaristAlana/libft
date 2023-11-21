@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 17:45:13 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/21 14:28:34 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:35:47 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,26 +103,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (ft_fill_arr(s, c, arr));
 }
-
-/*#include <stdio.h>
-
-void	affiche_liste(char **liste)
-{
-	while (*liste)
-	{
-		printf("%s\n", *liste);
-		liste++;
-	}
-}
-
-int	main(void)
-{
-	char	**liste;
-
-	//liste = ft_split("Salut  les amis :3", ' ');
-	liste = ft_split("      split       this for   me  !       ", ' ');
-	printf("%d\n", (unsigned int)ft_wordcount("Salut les  amis :3", ' '));
-	printf("%d\n", (unsigned int)ft_wordcount("      split       this for   me  !       ", ' '));
-	affiche_liste(liste);
-	return (0);
-}*/

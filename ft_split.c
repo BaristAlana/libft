@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 17:45:13 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/21 12:47:51 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/21 13:07:59 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,7 @@ char	**ft_split(char const *s, char c)
 	arr = (char **)ft_calloc(ft_wordcount(s, c) + 1, sizeof(char *));
 	if (!arr)
 		return (NULL);
-	arr = ft_fill_arr(s, c, arr);
-	return (arr);
+	return (ft_fill_arr(s, c, arr));
 }
 
 /*#include <stdio.h>

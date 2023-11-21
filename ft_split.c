@@ -6,20 +6,21 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 17:45:13 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/21 13:07:59 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:28:34 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_wordcount(const char *s, char c)
+static size_t	ft_wordcount(const char *s, char c)
 {
-	int	i;
-	int	control;
-	int	wc;
+	size_t	i;
+	size_t	control;
+	size_t	wc;
 
 	i = 0;
 	control = 0;
+	wc = 0;
 	while (s[i])
 	{
 		if (s[i] != c && control == 0)
@@ -69,9 +70,9 @@ static char	*ft_putword(int start, int end, const char *str, char c)
 
 static char	**ft_fill_arr(const char *s, char c, char **arr)
 {
-	int	i;
-	int	j;
-	int	start_word;
+	size_t	i;
+	int		j;
+	int		start_word;
 
 	i = 0;
 	j = 0;
@@ -120,8 +121,8 @@ int	main(void)
 
 	//liste = ft_split("Salut  les amis :3", ' ');
 	liste = ft_split("      split       this for   me  !       ", ' ');
-//	printf("%d\n", ft_wordcount("Salut les  amis :3", ' '));
-	printf("%d\n", ft_wordcount("      split       this for   me  !       ", ' '));
+	printf("%d\n", (unsigned int)ft_wordcount("Salut les  amis :3", ' '));
+	printf("%d\n", (unsigned int)ft_wordcount("      split       this for   me  !       ", ' '));
 	affiche_liste(liste);
 	return (0);
 }*/

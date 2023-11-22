@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 17:45:13 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/21 14:42:34 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/22 15:28:37 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char	*ft_putword(int start, int end, const char *str, char c)
 		++start;
 		++i;
 	}
-		word[i] = 0;
+	word[i] = 0;
 	return (word);
 }
 

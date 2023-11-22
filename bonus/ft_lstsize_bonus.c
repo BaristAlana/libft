@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 13:43:00 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/23 00:41:19 by aherbin          ###   ########.fr       */
+/*   Created: 2023/11/23 00:41:51 by aherbin           #+#    #+#             */
+/*   Updated: 2023/11/23 00:42:50 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
-		++i;
+	while (lst->next)
+		++lst;
 	return (i);
 }
-

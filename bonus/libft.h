@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/22 16:09:35 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/23 00:41:28 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 
 t_list	*ft_lstnew(void *content);
+
+void	ft_lstadd_front(t_list **lst, t_list *new_node);
+
+int		ft_lstsize(t_list *lst);
 
 #endif

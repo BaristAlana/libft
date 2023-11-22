@@ -34,7 +34,14 @@ SRC = $(addprefix ft_, $(addsuffix .c, isalpha \
 		tolower \
 		toupper))
 
+SRC_BONUS = $(addprefix ft_, $(addsuffix _bonus.c, \
+		lstnew \
+		lstadd_front \
+		lstsize))
+
 OBJS := $(SRC:%.c=%.o)
+
+OBJS_BONUS := $(SRC_BONUS:%.c=%.o)
 
 NAME = libft.a
 
@@ -42,7 +49,7 @@ CC = gcc
 
 CCFLAGS = -Wall -Wextra -Werror
 
-ARNAME = ar rcs $(NAME)
+ARNAME = ar crs $(NAME)
 
 all: $(NAME)
 
@@ -52,12 +59,15 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) -I. $(CCFLAGS) -o $@ -c $<
 
+bonus: all $(OBJS_BONUS)
+	$(ARNAME) $(OBJS_BONUS)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re

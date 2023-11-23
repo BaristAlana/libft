@@ -37,7 +37,13 @@ SRC = $(addprefix ft_, $(addsuffix .c, isalpha \
 SRC_BONUS = $(addprefix ft_, $(addsuffix _bonus.c, \
 		lstnew \
 		lstadd_front \
-		lstsize))
+		lstsize \
+		lstlast \
+		lstadd_back \
+		lstdelone \
+		lstclear \
+		lstiter \
+		lstmap))
 
 OBJS := $(SRC:%.c=%.o)
 
@@ -60,7 +66,7 @@ $(NAME): $(OBJS)
 	$(CC) -I. $(CCFLAGS) -o $@ -c $<
 
 bonus: all $(OBJS_BONUS)
-	$(ARNAME) $(OBJS_BONUS)
+	@$(ARNAME) $(OBJS_BONUS)
 
 clean:
 	rm -f $(OBJS) $(OBJS_BONUS)

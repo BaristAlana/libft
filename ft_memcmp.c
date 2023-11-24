@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:55:36 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/17 18:12:24 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:36:27 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*membloc1;
 	unsigned char	*membloc2;
 
-	membloc1 = (unsigned char *)s1;
-	membloc2 = (unsigned char *)s2;
+	membloc1 = (unsigned char *) s1;
+	membloc2 = (unsigned char *) s2;
 	i = 0;
 	if (n == 0)
 		return (0);

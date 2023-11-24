@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:52:29 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/19 22:15:43 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:01:51 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-/* #include <string.h>
-#include <stdio.h>
-
-struct my_struct {
-  int a;
-  char b;
-};
-int main()
-{
-struct my_struct src, dst;
-
-// Initialise la structure src.
-src.a = 1;
-src.b = 'A';
-
-// Copie les données de la structure src dans la structure dst.
-ft_memcpy(&dst, &src, sizeof(struct my_struct));
-
-// Affiche les données de la structure dst.
-printf("a = %d\n", dst.a);
-printf("b = %c\n", dst.b);
-}
- */

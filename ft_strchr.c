@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:42:34 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/19 22:02:22 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:34:39 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,17 @@ char	*ft_strchr(const char *s, int c)
 {
 	size_t	len;
 	size_t	i;
-	char	non_num_char;
+	char	*tmp;
 
-	non_num_char = c;
-	len = 0;
-	while (s[len])
-		++len;
+	tmp = (char *) s;
+	len = ft_strlen(s);
 	i = 0;
 	while (i <= len)
 	{
-		if (s[i] == non_num_char)
-			return ((char *)&s[i]);
+		if (*tmp == (char) c)
+			return (tmp);
 		++i;
+		++tmp;
 	}
 	return (NULL);
 }

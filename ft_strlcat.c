@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:26:39 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/16 15:35:08 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:09:01 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		++i;
-	while (src[j])
-		++j;
+	i = ft_strlen(dest);
+	j = ft_strlen(src);
 	if (size < i)
 		j += size;
 	else

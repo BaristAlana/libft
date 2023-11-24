@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:49:11 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/15 11:25:24 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:00:37 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-/*
-#include <stdio.h>
-
-int main() {
-  char str[] = "Hello, world!";
-
-  // Remplit le premier octet du tableau str avec le caractère 'A'.
-  ft_memset(str, 'A', 5);
-
-  // Affiche le contenu du tableau str.
-  printf("%s\n", str);
-
-  return 0;
-}
-*/

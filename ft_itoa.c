@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 15:15:17 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/19 21:43:33 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:46:26 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,27 +77,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
-/*#include <stdio.h>
-#include <limits.h>
-
-int	main(void)
-{
-	char	*str = ft_itoa(1);
-	char	*str1 = ft_itoa(0);
-	char	*str2 = ft_itoa(INT_MAX);
-	char	*str3 = ft_itoa(INT_MIN);
-
-	printf("%s\n", str);
-	printf("%s\n", str1);
-	printf("%s\n", str2);
-	printf("%s\n", str3);
-	if (str)
-		free(str);
-	if (str1)
-		free(str1);
-	if (str2)
-		free(str2);
-	if (str3)
-		free(str3);
-}*/

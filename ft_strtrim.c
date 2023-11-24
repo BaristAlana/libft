@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 23:08:02 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/19 22:45:47 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:43:26 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	retstr[i] = 0;
 	return (retstr);
 }
-
-/*int	main()
-{
-	char *s1 = "abababahhahhahbMein Name ist bha! grrrr ahabhbhaha";
-	char *set = "abh";
-	ft_putstr_fd(ft_strtrim(s1, set), 1);
-}*/

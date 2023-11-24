@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 00:29:21 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/24 00:48:54 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/24 15:13:46 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,28 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	t_list	*new_obj;
+	t_list	*save;
 	t_list	*tmp;
 
-	tmp = lst;
 	if (!lst || !f || !del)
 		return (NULL);
-	new_list = NULL;
+	tmp = lst;
+	new_list = ft_lstnew(f(tmp->content));
+	if (!new_list)
+		return (NULL);
+	save = new_list;
+	tmp = tmp->next;
 	while (tmp)
 	{
-		new_obj = ft_lstnew((*f)(tmp->content));
-		if (!new_obj)
+		new_list->next = ft_lstnew(f(tmp->content));
+		if (!new_list->next)
 		{
-			ft_lstclear(&new_list, del);
+			ft_lstclear(&save, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new_list, new_obj);
+		new_list = new_list->next;
 		tmp = tmp->next;
 	}
-	return (new_list);
+	new_list->next = NULL;
+	return (save);
 }

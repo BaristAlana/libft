@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 10:54:38 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/19 22:36:22 by aherbin          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:38:59 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,3 @@ char	*ft_strdup(const char *s)
 	str[i] = '\0';
 	return (str);
 }
-
-/*#include <stdio.h>
-int main()
-{
-  char *src = "ahahah";
-  char *ptr = ft_strdup(src);
-  printf("%s\n", ptr);
-}*/

@@ -1,3 +1,7 @@
+#####################################################
+#					  VARIABLES						#
+#####################################################
+
 NAME = libft.a
 
 CC = cc
@@ -33,27 +37,36 @@ SRC_BONUS = $(addprefix ft_, $(addsuffix .c, \
 
 OBJS_BONUS := $(SRC_BONUS:%.c=%.o)
 
+CYAN = \033[1;36m
+GREEN = \033[1;32m
+RED = \033[1;31m
+BLUE = \033[0;34m
+
+#####################################################
+#						RULES						#
+#####################################################
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(ARNAME) $(OBJS)
-	@echo "$(NAME) created"
+	@echo "$(CYAN)$(NAME) $(BLUE)created"
 
 %.o: %.c
 	@$(CC) $(INCLUDES) $(CCFLAGS) -o $@ -c $<
-	@echo "$@ successfully compiled"
+	@echo "$(GREEN)$@ $(BLUE)successfully compiled"
 
 bonus: $(OBJS_BONUS) $(NAME)
 	@$(ARNAME) $(OBJS_BONUS)
-	@echo "Bonus OBJS added to $(NAME)"
+	@echo "$(CYAN)Bonus OBJS $(BLUE)added to $(NAME)"
 
 clean:
 	@$(RM) $(OBJS) $(OBJS_BONUS)
-	@echo "OBJS successfully deleted"
+	@echo "$(RED)OBJS $(BLUE)successfully deleted"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "$(NAME) successfully deleted"
+	@echo "$(RED)$(NAME) $(BLUE)successfully deleted"
 
 re: fclean all
 

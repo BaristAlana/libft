@@ -6,7 +6,7 @@
 #    By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/25 14:15:08 by aherbin           #+#    #+#              #
-#    Updated: 2024/01/26 17:24:48 by aherbin          ###   ########.fr        #
+#    Updated: 2024/01/26 17:25:27 by aherbin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -141,7 +141,7 @@ directories: $(OBJS_DIR) $(GNL_OBJS_DIR) $(PRINTF_OBJS_DIR)
 
 clean:
 	@$(RM) $(OBJS) $(OBJS_PRINTF) $(OBJS_GNL)
-	rm -rf $(OBJS_DIR)
+	@rm -rf $(OBJS_DIR)
 	@echo "$(RED)OBJS $(BLUE)successfully deleted"
 
 fclean: clean

@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2023/11/25 14:15:01 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/01/26 17:01:35 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}				t_list;
+/* ************************************************************************** */
+/*                                general ft                                  */
+/* ************************************************************************** */
 
 int		ft_isprint(int c);
 
@@ -92,6 +91,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char	**ft_split(char const *s, char c);
 
+/* ************************************************************************** */
+/*                               linked list ft                               */
+/* ************************************************************************** */
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 t_list	*ft_lstnew(void *content);
 
 void	ft_lstadd_front(t_list **lst, t_list *new_node);
@@ -100,7 +108,7 @@ int		ft_lstsize(t_list *lst);
 
 t_list	*ft_lstlast(t_list *lst);
 
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new_node);
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
@@ -109,5 +117,38 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* ************************************************************************** */
+/*                                 ft_printf                                  */
+/* ************************************************************************** */
+
+int		ft_printf(const char *format, ...);
+
+int		ft_conv(const char identifier, va_list args);
+
+int		ft_print_c(char arg);
+
+int		ft_print_s(char *arg);
+
+int		ft_print_n(long int arg);
+
+int		ft_itoa_hex(unsigned long long hx, int input, int count);
+
+int		ft_print_u(unsigned int arg);
+
+int		ft_print_p(unsigned long arg);
+
+/* ************************************************************************** */
+/*                               Get_Next_Line                                */
+/* ************************************************************************** */
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+# ifndef MAX_FD
+#  define MAX_FD 64
+# endif
+
+char	*get_next_line(int fd);
 
 #endif

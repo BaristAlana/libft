@@ -6,11 +6,11 @@
 #    By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/25 14:15:08 by aherbin           #+#    #+#              #
-#    Updated: 2024/01/26 17:03:16 by aherbin          ###   ########.fr        #
+#    Updated: 2024/01/26 17:21:25 by aherbin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# **************************************************************************** #                                                                             #
+# **************************************************************************** #
 #                                 variables                                    #
 # **************************************************************************** #
 
@@ -28,17 +28,16 @@ RM = rm -f
 
 MKDIR_P = mkdir -p
 
+CYAN = \033[1;36m
+GREEN = \033[1;32m
+RED = \033[1;31m
+BLUE = \033[0;34m
+
+#          LIBFT          #
+
 SRC_DIR = src/
 
-PRINTF_SRC_DIR = $(SRC_DIR)printf
-
-GNL_SRC_DIR = $(SRC_DIR)gnl
-
 OBJS_DIR = objs/
-
-PRINTF_OBJS_DIR = $(OBJS_DIR)printf/
-
-GNL_OBJS_DIR = $(OBJS_DIR)gnl/
 
 LIBFT_FILES = isalpha isdigit isalnum \
 		isascii isprint atoi \
@@ -56,33 +55,42 @@ LIBFT_FILES = isalpha isdigit isalnum \
 		lstlast lstadd_back lstdelone \
 		lstclear lstiter lstmap \
 
-PRINTF_FILES = printf printf_c printf_s \
-		printf_n printf_phex printf_u
-
-GNL_FILES = get_next_line
-
 SRC = $(addprefix $(SRC_DIR)ft_, $(addsuffix .c, $(LIBFT_FILES)))
-
-PRINTF_SRC = $(addprefix $(PRINTF_SRC_DIR)ft_, $(addsuffix .c, $(PRINTF_FILES)))
-
-GNL_SRC = $(addprefix $(GNL_SRC_DIR), $(addsuffix .c, $(GNL_FILES)))
 
 OBJS := $(addprefix $(OBJS_DIR)ft_, $(addsuffix .o, $(LIBFT_FILES)))
 
+#         PRINTF          #
+
+PRINTF_SRC_DIR = $(SRC_DIR)printf
+
+PRINTF_OBJS_DIR = $(OBJS_DIR)printf/
+
+PRINTF_FILES = printf printf_c printf_s \
+		printf_n printf_phex printf_u
+
+PRINTF_SRC = $(addprefix $(PRINTF_SRC_DIR)ft_, $(addsuffix .c, $(PRINTF_FILES)))
+
 PRINTF_OBJS := $(addprefix $(PRINTF_OBJS_DIR)ft_, $(addsuffix .o, $(PRINTF_FILES)))
+
+#           GNL           #
+
+GNL_SRC_DIR = $(SRC_DIR)gnl
+
+GNL_OBJS_DIR = $(OBJS_DIR)gnl/
+
+GNL_FILES = get_next_line
+
+GNL_SRC = $(addprefix $(GNL_SRC_DIR), $(addsuffix .c, $(GNL_FILES)))
 
 GNL_OBJS := $(addprefix $(GNL_OBJS_DIR), $(addsuffix .o, $(GNL_FILES)))
 
-CYAN = \033[1;36m
-GREEN = \033[1;32m
-RED = \033[1;31m
-BLUE = \033[0;34m
-
-# **************************************************************************** #                                                                             #
-#                                    RULES                                     #
+# **************************************************************************** #
+#                                 LIBFT RULES                                  #
 # **************************************************************************** #
 
 all: libft_std printf gnl
+
+libft_std: $(NAME)
 
 $(NAME): directories $(OBJS)
 	@$(ARNAME) $(OBJS)
@@ -92,34 +100,44 @@ $(OBJS_DIR)%.o: $(SRC_DIR)%.c
 	@$(CC) $(INCLUDES) $(CCFLAGS) -o $@ -c $<
 	@echo "$(GREEN)$@ $(BLUE)successfully compiled"
 
+$(OBJS_DIR):
+	@$(MKDIR_P) $(OBJS_DIR)
+
+# **************************************************************************** #
+#                                PRINTF RULES                                  #
+# **************************************************************************** #
+
+printf: $(NAME) $(PRINTF_OBJS)
+	@$(ARNAME) $(PRINTF_OBJS)
+	@echo "$(CYAN) Printf $(BLUE) added to $(CYAN) $(NAME)"
+
+$(PRINTF_OBJS_DIR): $(OBJS_DIR)
+	@$(MKDIR_P) $(PRINTF_OBJS_DIR)
+
 $(PRINTF_OBJS_DIR)%.o: $(PRINTF_SRC_DIR)%.c
 	@$(CC) $(INCLUDES) $(CCFLAGS) -o $@ -c $<
 	@echo "$(GREEN)$@ $(BLUE)successfully compiled"
+
+# **************************************************************************** #
+#                                  GNL RULES                                   #
+# **************************************************************************** #
+
+gnl: $(NAME) $(GNL_OBJS)
+	@$(ARNAME) $(GNL_OBJS)
+	@echo "$(CYAN) Get_Next_Line $(BLUE) added to $(CYAN) $(NAME)"
+
+$(GNL_OBJS_DIR): $(OBJS_DIR)
+	@$(MKDIR_P) $(GNL_OBJS_DIR)
 
 $(GNL_OBJS_DIR)%.o: $(GNL_SRC_DIR)%.c
 	@$(CC) $(INCLUDES) $(CCFLAGS) -o $@ -c $<
 	@echo "$(GREEN)$@ $(BLUE)successfully compiled"
 
-printf: $(PRINTF_OBJS) $(NAME)
-	@$(ARNAME) $(PRINTF_OBJS)
-	@echo "$(CYAN) Printf $(BLUE) added to $(CYAN) $(NAME)"
-
-gnl: $(GNL_OBJS) $(NAME)
-	@$(ARNAME) $(GNL_OBJS)
-	@echo "$(CYAN) Get_Next_Line $(BLUE) added to $(CYAN) $(NAME)"
-
-libft_std: $(NAME)
+# **************************************************************************** #
+#                                    RULES                                     #
+# **************************************************************************** #
 
 directories: $(OBJS_DIR) $(GNL_OBJS_DIR) $(PRINTF_OBJS_DIR)
-
-$(GNL_OBJS_DIR): $(OBJS_DIR)
-	$(MKDIR_P) $(GNL_OBJS_DIR)
-
-$(PRINTF_OBJS_DIR): $(OBJS_DIR)
-	$(MKDIR_P) $(PRINTF_OBJS_DIR)
-
-$(OBJS_DIR):
-	$(MKDIR_P) $(OBJS_DIR)
 
 clean:
 	@$(RM) $(OBJS) $(OBJS_PRINTF) $(OBJS_GNL)

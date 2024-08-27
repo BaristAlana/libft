@@ -6,15 +6,15 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:40:52 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/27 16:42:03 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/27 20:59:44 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 long	ft_atol(char *str)
 {
 	long	nb;
-	int	sign;
-	int	i;
+	int		sign;
+	int		i;
 
 	i = 0;
 	nb = 0;

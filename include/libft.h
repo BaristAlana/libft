@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2024/01/26 17:01:35 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/27 16:49:45 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memrchr(const void *s, int c, size_t n);
 
 int		ft_atoi(char *str);
+
+long	ft_atol(char *str);
 
 char	*ft_strdup(const char *s);
 

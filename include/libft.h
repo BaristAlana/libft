@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/28 15:09:01 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/28 15:25:43 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,62 @@
 /*                                general ft                                  */
 /* ************************************************************************** */
 
+/**
+ * @brief Checks for any printable character including space.
+ *
+ * @param c The character to check.
+ * @return non-zero if c is printable, 0 otherwise.
+ */
 int		ft_isprint(int c);
 
+
+/**
+ * @brief Checks for a digit (0 through 9).
+ *
+ * @param c The character to check.
+ * @return non-zero if c is a digit, 0 otherwise.
+ */
 int		ft_isdigit(int c);
 
+/**
+ * @brief checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
+ *
+ * @param c The character to check.
+ * @return non-zero if c is an ASCII character, 0 otherwise.
+ */
 int		ft_isascii(int c);
 
+/**
+ * @brief checks for an alphanumeric character; it is equivalent to (ft_isalpha(c) || ft_isdigit(c)).
+ *
+ * @param c The character to check.
+ * @return non-zero if c is an alphanumeric character, 0 otherwise.
+ */
 int		ft_isalnum(int c);
 
+/**
+ * @brief checks for an alphabetic character; it is equivalent to (isupper(c) || islower(c)).
+ *
+ * @param c The character to check.
+ * @return non-zero if c is an alphabetic character, 0 otherwise.
+ */
 int		ft_isalpha(int c);
+
+/**
+ * @brief checks for an uppercase letter.
+ *
+ * @param c The character to check.
+ * @return non-zero if c is an uppercase letter, 0 otherwise.
+ */
+int		ft_isupper(int c);
+
+/**
+ * @brief checks for an a lowercase letter.
+ *
+ * @param c The character to check.
+ * @return non-zero if c is a lowercase letter, 0 otherwise.
+ */
+int		ft_islower(int c);
 
 size_t	ft_strlen(const char *str);
 

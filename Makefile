@@ -6,7 +6,7 @@
 #    By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/25 14:15:08 by aherbin           #+#    #+#              #
-#    Updated: 2024/08/28 15:08:24 by aherbin          ###   ########.fr        #
+#    Updated: 2024/08/28 15:24:01 by aherbin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,8 +42,9 @@ SRC_DIR = src/
 OBJS_DIR = objs/
 
 LIBFT_FILES = isalpha isdigit isalnum \
-		isascii isprint atoi atol \
-		bzero calloc itoa \
+		isascii isprint islower isupper \
+		atoi atol itoa \
+		bzero calloc \
 		memchr memcmp memcpy \
 		memmove memset \
 		putchar_fd putendl_fd putnbr_fd \

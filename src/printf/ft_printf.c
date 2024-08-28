@@ -6,23 +6,11 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 22:29:49 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/28 16:37:04 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/28 17:36:52 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_print_c(char arg);
-
-int		ft_print_s(char *arg);
-
-int		ft_print_n(long int arg);
-
-int		ft_itoa_hex(unsigned long long hx, int input, int count);
-
-int		ft_print_u(unsigned int arg);
-
-int		ft_print_p(unsigned long arg);
 
 int	ft_conv(const char identifier, va_list args)
 {

@@ -6,13 +6,11 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 22:35:53 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/28 16:51:25 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/28 17:36:32 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_print_s(char *arg);
 
 int	ft_itoa_hex(unsigned long long hx, int input, int count)
 {

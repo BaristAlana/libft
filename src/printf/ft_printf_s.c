@@ -6,11 +6,13 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 22:34:59 by aherbin           #+#    #+#             */
-/*   Updated: 2024/01/26 16:04:51 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/28 16:51:43 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_print_c(char arg);
 
 int	ft_print_s(char *arg)
 {

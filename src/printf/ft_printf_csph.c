@@ -6,34 +6,34 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 22:30:38 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/29 11:08:22 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/29 11:51:02 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_print_c(char arg)
+int	ft_print_c(int fd, char arg)
 {
-	write (1, &arg, 1);
+	write (fd, &arg, 1);
 	return (1);
 }
 
-int	ft_print_s(char *arg)
+int	ft_print_s(int fd, char *arg)
 {
 	int	i;
 
 	i = 0;
 	if (!arg)
 	{
-		ft_putstr_fd("(null)", 1);
+		ft_putstr_fd("(null)", fd);
 		return (6);
 	}
 	while (arg[i])
-		ft_print_c(arg[i++]);
+		ft_print_c(fd, arg[i++]);
 	return (i);
 }
 
-int	ft_itoa_hex(unsigned long long hx, int input, int count)
+int	ft_itoa_hex(int fd, unsigned long long hx, int input, int count)
 {
 	char		*hx_b;
 	int			i;
@@ -48,17 +48,17 @@ int	ft_itoa_hex(unsigned long long hx, int input, int count)
 	if (hx >= 16)
 	{
 		count++;
-		ft_itoa_hex(hx / 16, input, 1);
+		ft_itoa_hex(fd, hx / 16, input, 1);
 	}
 	i = hx % 16;
-	ret += (int) write(1, &hx_b[i], 1);
+	ret += (int) write(fd, &hx_b[i], 1);
 	return (ret);
 }
 
-int	ft_print_p(unsigned long arg)
+int	ft_print_p(int fd, unsigned long arg)
 {
 	if (!arg)
-		return (ft_print_s("(nil)"));
-	ft_putstr_fd("0x", 1);
-	return (ft_itoa_hex(arg, 0, 0) + 2);
+		return (ft_print_s(fd, "(nil)"));
+	ft_putstr_fd("0x", fd);
+	return (ft_itoa_hex(fd, arg, 0, 0) + 2);
 }

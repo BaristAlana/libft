@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/29 11:15:28 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/29 11:31:08 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -478,6 +478,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * @return The number of printed chars on success, a negative value otherwise.
  */
 int		ft_printf(const char *format, ...);
+
+/**
+ * @brief Prints a formatted string on a file descriptor
+ *
+ * @param fd The file descriptor pointing to the destination.
+ * @param format The format string to organise the data to print.
+  * @param ... The data identified by the flag characters in the format string;
+ * Follows the same order as in format.
+ * @return The number of printed chars on success, a negative value otherwise.
+ */
+int		ft_dprintf(int fd, const char *format, ...);
 
 /* ************************************************************************** */
 /*                               Get_Next_Line                                */

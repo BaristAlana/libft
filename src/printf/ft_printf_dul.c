@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:59:42 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/29 11:08:23 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/29 11:26:04 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,26 +53,26 @@ static char	*ft_u_itoa(unsigned int n)
 	return (str);
 }
 
-int	ft_print_u(unsigned int arg)
+int	ft_print_u(int fd, unsigned int arg)
 {
 	char	*str_u;
 	int		i;
 
 	str_u = ft_u_itoa(arg);
 	i = ft_strlen(str_u);
-	ft_putstr_fd(str_u, 1);
+	ft_putstr_fd(str_u, fd);
 	free(str_u);
 	return (i);
 }
 
-int	ft_print_n(long arg)
+int	ft_print_n(int fd, long arg)
 {
 	char	*str_n;
 	int		i;
 
 	str_n = ft_itoa(arg);
 	i = ft_strlen(str_n);
-	ft_putstr_fd(str_n, 1);
+	ft_putstr_fd(str_n, fd);
 	free(str_n);
 	return (i);
 }

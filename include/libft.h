@@ -6,7 +6,7 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:43:51 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/28 17:36:24 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/29 11:15:28 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -469,21 +469,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /*                                 ft_printf                                  */
 /* ************************************************************************** */
 
+/**
+ * @brief Simplified version of stdio printf.
+ *
+ * @param format The format string to organise the data to print.
+ * @param ... The data identified by the flag characters in the format string;
+ * Follows the same order as in format.
+ * @return The number of printed chars on success, a negative value otherwise.
+ */
 int		ft_printf(const char *format, ...);
-
-int		ft_conv(const char identifier, va_list args);
-
-int		ft_print_c(char arg);
-
-int		ft_print_s(char *arg);
-
-int		ft_print_n(long int arg);
-
-int		ft_itoa_hex(unsigned long long hx, int input, int count);
-
-int		ft_print_u(unsigned int arg);
-
-int		ft_print_p(unsigned long arg);
 
 /* ************************************************************************** */
 /*                               Get_Next_Line                                */

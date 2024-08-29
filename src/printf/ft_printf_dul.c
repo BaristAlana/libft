@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_u.c                                      :+:      :+:    :+:   */
+/*   ft_printf_dul.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:59:42 by aherbin           #+#    #+#             */
-/*   Updated: 2024/01/26 16:04:58 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/29 11:08:23 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,17 @@ int	ft_print_u(unsigned int arg)
 	i = ft_strlen(str_u);
 	ft_putstr_fd(str_u, 1);
 	free(str_u);
+	return (i);
+}
+
+int	ft_print_n(long arg)
+{
+	char	*str_n;
+	int		i;
+
+	str_n = ft_itoa(arg);
+	i = ft_strlen(str_n);
+	ft_putstr_fd(str_n, 1);
+	free(str_n);
 	return (i);
 }

@@ -6,13 +6,20 @@
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 22:29:49 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/28 17:36:52 by aherbin          ###   ########.fr       */
+/*   Updated: 2024/08/29 11:07:25 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_conv(const char identifier, va_list args)
+int		ft_print_c(char arg);
+int		ft_print_s(char *arg);
+int		ft_print_n(long int arg);
+int		ft_itoa_hex(unsigned long long hx, int input, int count);
+int		ft_print_u(unsigned int arg);
+int		ft_print_p(unsigned long arg);
+
+static int	ft_conv(const char identifier, va_list args)
 {
 	if (identifier == 'c')
 		return (ft_print_c(va_arg(args, int)));

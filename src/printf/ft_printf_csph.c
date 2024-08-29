@@ -1,16 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_phex.c                                   :+:      :+:    :+:   */
+/*   ft_printf_csph.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 22:35:53 by aherbin           #+#    #+#             */
-/*   Updated: 2024/08/28 17:36:32 by aherbin          ###   ########.fr       */
+/*   Created: 2024/01/11 22:30:38 by aherbin           #+#    #+#             */
+/*   Updated: 2024/08/29 11:08:22 by aherbin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_print_c(char arg)
+{
+	write (1, &arg, 1);
+	return (1);
+}
+
+int	ft_print_s(char *arg)
+{
+	int	i;
+
+	i = 0;
+	if (!arg)
+	{
+		ft_putstr_fd("(null)", 1);
+		return (6);
+	}
+	while (arg[i])
+		ft_print_c(arg[i++]);
+	return (i);
+}
 
 int	ft_itoa_hex(unsigned long long hx, int input, int count)
 {

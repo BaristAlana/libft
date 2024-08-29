@@ -6,7 +6,7 @@
 #    By: aherbin <aherbin@student.42berlin.de>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/25 14:15:08 by aherbin           #+#    #+#              #
-#    Updated: 2024/08/28 15:24:01 by aherbin          ###   ########.fr        #
+#    Updated: 2024/08/29 11:07:58 by aherbin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,8 +68,7 @@ PRINTF_SRC_DIR = $(SRC_DIR)printf
 
 PRINTF_OBJS_DIR = $(OBJS_DIR)printf/
 
-PRINTF_FILES = printf printf_c printf_s \
-		printf_n printf_phex printf_u
+PRINTF_FILES = printf printf_csph printf_dul
 
 PRINTF_SRC = $(addprefix $(PRINTF_SRC_DIR)ft_, $(addsuffix .c, $(PRINTF_FILES)))
 
